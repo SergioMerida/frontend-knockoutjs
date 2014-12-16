@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+ 	 <!-- Jquery -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+ <script type='text/javascript' src='frontend-knockoutjs/knockout/knockout-3.2.0.js'></script>
+ <!-- Bootstrap core CSS -->
+ <link href="frontend-knockoutjs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="frontend-knockoutjs/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+ <link href="frontend-knockoutjs/css/styles.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			
+		</div><!--jumbotron-->
+	</div><!--container-->
+
+	<div class="container">
+		<div class="row">
+			</div><!--col-md-6 first-->
+			<div class="col-md-6">
+				<form data-bind="submit:addItem">
+        			Add item: <input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
+        			<button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+   				</form><!--form-->
+     
+    			<p>Your values:</p>
+    			<select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"> </select>
+     
+    			<div>
+        			<button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+        			<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+    			</div>
+			</div><!--col-md-6 second-->	
+		</div><!--Row close-->	
+	</div><!--second container close-->
+
+	
+
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+ 		<div class="container">
+  			<p class="navbar-text pull-left">Site Built By: Sergio Merida</p>
+  			<a href="https://github.com/SergioMerida" target="blank" class="navbar-btn btn-danger btn pull-right">Look my Github</a>
+ 		</div><!--container-->
+	</div><!--navbar-->
+	
+	<!--Javascript-->
+	<script src="js/script.js"></script>
+	<!-- Bootstrap -->
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
