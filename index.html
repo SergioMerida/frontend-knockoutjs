@@ -21,17 +21,33 @@
 		</div>
 	</div>
 	<div class="container">
-		<div class="panel panel-default">
-			<div class="panel-heading">Type some artist and a song</div>
-  			<div class="panel-body">
-				<div class="data">
-				<p>Artist: <input data-bind="value: artist" /></p>
-				<p>Song: <input data-bind="value: song" /></p>
-				<p>Artist: <strong data-bind="text: artist"></strong> Song: <strong data-bind="text: song"></strong></p>
-				<p data-bind="text: together"></p>
-				</div>
-			</div><!--panel-body-->
-		</div><!--panel-->
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Type some artist and a song</div>
+  					<div class="panel-body">
+						<div class="data">
+						<p>Artist: <input data-bind="value: artist" /></p>
+						<p>Song: <input data-bind="value: song" /></p>
+						<p>Artist: <strong data-bind="text: artist"></strong> Song: <strong data-bind="text: song"></strong></p>
+						<p data-bind="text: together"></p>
+					</div>
+					</div><!--panel-body-->
+				</div><!--panel-->
+			</div><!--1st col-md-6-->
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">Look at other examples with knockout Js</div>
+  					<div class="panel-body">
+						<ul class="list-group">
+							<li class="list-group-item"><a href="templates/list.html">Look the list example</a></li>
+							<li class="list-group-item"><a href="templates/controls.html">Look controls example</a></li>
+							<li class="list-group-item"><a href="templates/collections.html">Look collections example</a></li>
+						</ul>	
+					</div><!--panel-body-->
+				</div><!--panel-->
+			</div><!--2nd col-md-6-->
+		</div><!--row-->
 	</div><!--container-->
 
 	<div class="navbar navbar-inverse navbar-fixed-bottom">

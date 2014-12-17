@@ -19,7 +19,9 @@ var BetterListModel = function () {
 	};
 
     this.sortItems = function() {
-        this.allItems.sort();
+	this.allItems.sort(function (a, b) {
+	return a.toLowerCase().localeCompare(b.toLowerCase());
+	});
     };
 };
  
