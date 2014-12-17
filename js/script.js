@@ -1,4 +1,4 @@
-function 
+function peopleViewModel() {
 var Person = function(name, children) {
     this.name = name;
     this.children = ko.observableArray(children);
@@ -7,9 +7,8 @@ var Person = function(name, children) {
         this.children.push("New child");
     }.bind(this);
 }
- 
-// The view model is an abstract description of the state of the UI, but without any knowledge of the UI technology (HTML)
-var viewModel = {
+
+var peoplelist = {
     people: [
         new Person("Annabelle", ["Arnie", "Anders", "Apple"]),
         new Person("Bertie", ["Boutros-Boutros", "Brianna", "Barbie", "Bee-bop"]),
@@ -18,8 +17,9 @@ var viewModel = {
     showRenderTimes: ko.observable(false)
 };
 
-ko.applyBindings(viewModel);
+}; //Close peopleViewModel
 
+function listViewModel() {
 var BetterListModel = function () {
     this.itemToAdd = ko.observable("");
     this.allItems = ko.observableArray(["Fries", "Eggs Benedict", "Ham", "Cheese"]); // Initial items
@@ -41,5 +41,13 @@ var BetterListModel = function () {
     };
 };
  
-ko.applyBindings(new BetterListModel());
+}; //close listViewModel
 
+function ViewModel(){
+    var self = this;
+
+    self.peopleViewModel = new peopleViewModel();
+    self.listViewModel = new listViewModel();
+}
+
+ko.applyBindings(new ViewModel());

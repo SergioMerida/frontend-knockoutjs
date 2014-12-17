@@ -25,8 +25,8 @@
 		<div class="row">
 			<div class="col-md-6">
 				<h2>People</h2>
-    			<ul data-bind="foreach: people">
-        			<li>
+    			<ul class="list-group" data-bind="foreach: people">
+        			<li class="list-group-item">
             			<div>
                 			<span data-bind="text: name"> </span> has <span data-bind='text: children().length'>&nbsp;</span> children:
                 			<a href='#' data-bind='click: addChild '>Add child</a>
@@ -34,8 +34,8 @@
                     		(person rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
                 			</span>
             			</div>
-            			<ul data-bind="foreach: children">
-                			<li>
+            			<ul class="list-group" data-bind="foreach: children">
+                			<li class="list-group-item">
                     			<span data-bind="text: $data"> </span>
                     			<span class='renderTime' data-bind='visible: $root.showRenderTimes'>
                         		(child rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
@@ -47,18 +47,23 @@
 				<label><input data-bind='checked: showRenderTimes' type='checkbox' /> Show render times</label> 
 			</div><!--col-md-6 first-->
 			<div class="col-md-6">
-				<form data-bind="submit:addItem">
-        			Add item: <input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
-        			<button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
-   				</form><!--form-->
-     
-    			<p>Your values:</p>
-    			<select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"> </select>
-     
-    			<div>
-        			<button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
-        			<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
-    			</div>
+				<div class="panel panel-inverse">
+ 	 				<div class="panel-heading">Watch the video</div>
+  					<div class="panel-body"><!--Start the video-->
+						<form class="navbar-form" data-bind="submit:addItem">
+							<div class="form-group">
+        							Add item: <input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
+							<button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+							</div>
+   						</form><!--form-->
+     	
+    						<select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"> </select>
+    						<div>
+        						<button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+        						<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+    						</div><!--buttons-->
+					</div><!--panel-body-->
+				</div><!--panel-->	
 			</div><!--col-md-6 second-->	
 		</div><!--Row close-->	
 	</div><!--second container close-->
