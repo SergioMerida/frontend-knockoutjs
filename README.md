@@ -28,11 +28,11 @@ the webpage with Knockout.JS.
 ### People Collections
 As a user I must be able to display a minimum of 3 peoples, each with 3 children as a <ul> list. (use ko.observableArray)
 Example:
-- Isabel tiene 3 hijos:
+- Isabel have 3 childs:
   - Diego
   - Fernando
   - Jose
-- Ines tiene 4 hijos:
+- Ines have 4 childs:
   - Juan
   - Pedro
   - Maria
