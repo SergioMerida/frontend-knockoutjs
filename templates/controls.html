@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+ 	 <!-- Jquery -->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
+ <script type='text/javascript' src='knockout/knockout-3.2.0.js'></script>
+ <!-- Bootstrap core CSS -->
+ <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+ <link href="css/controls.css" rel="stylesheet">
+
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron">
+			<h1>How to use controls with knockout</h1>
+		</div><!--jumbotron-->
+	</div><!--container-->
+
+	<div class="container">
+		<div class="row">
+			<div class="col-md-1"></div>
+			<div class="col-md-4">
+				<div class="panel panel-inverse">
+  					<div class="panel-body">
+						<h3>What's in the model</h3>
+							<table class="table table-hover">
+								<tr>
+									<td>Text value:</td>
+									<td data-bind="text: stringValue"></td>
+								</tr><!--stringValue-->
+								<tr>
+									<td>Password: </td>
+									<td data-bind="text: passwordValue"></td>
+								</tr><!--password-->
+								<tr>
+									<td>Boolean value:</td>
+									<td data-bind="text: booleanValue() ? 'True' : 'False'"></td>
+								</tr><!--boolean-->								
+								<tr>
+									<td>Selected option:</td>
+									<td data-bind="text: selectedOptionValue"></td>
+								</tr><!--selected-->		
+								<tr>						
+									<td>Multi-selected options:</td>
+									<td data-bind="text: multipleSelectedOptionValues"></td>
+								</tr><!---->
+								<tr>
+									<td>Radio button selection:</td>
+									<td data-bind="text: radioSelectedOptionValue"></td>
+								</tr><!---->				
+							</table>
+					</div><!--Panel-body-->
+				</div><!--Panel-->
+			</div><!-- first col-md-6-->
+			<div class="col-md-6">
+				<div class="panel panel-inverse">
+  					<div class="panel-body">
+						<h3>HTML controls</h3>
+							<table class="table table-hover">
+							<tr>
+								<td>Text value (updates on change):</td>
+								<td><input class="form-control" data-bind="value: stringValue" /></td>
+							</tr>
+							<tr>
+								<td>Text value (updates on keystroke):</td>
+								<td><input class="form-control" data-bind='value: stringValue, valueUpdate: "afterkeydown"' /></td>
+							</tr>
+							<tr>
+								<td>Text value (multi-line):</td>
+								<td><textarea class="form-control" data-bind="value: stringValue"> </textarea></td>
+							</tr>
+							<tr>
+								<td>Password:</td>
+								<td><input class="form-control" type="password" data-bind="value: passwordValue" /></td>
+							</tr>
+							<tr>
+								<td>Checkbox:</td>
+								<td><input type="checkbox" data-bind="checked: booleanValue" /></td>
+							</tr>
+							<tr>
+								<td>Drop-down list:</td>
+								<td><select data-bind="options: optionValues, value: selectedOptionValue"></select></td>
+							</tr>
+							<tr>
+								<td>Multi-select drop-down list:</td>
+								<td><select multiple="multiple" data-bind="options: optionValues, selectedOptions: multipleSelectedOptionValues"></select></td>
+							</tr>
+							<tr>
+								<td>Radio buttons:</td>
+								<td>
+									<label><input type="radio" value="Alpha" data-bind="checked: radioSelectedOptionValue" />Alpha</label>
+									<label><input type="radio" value="Beta" data-bind="checked: radioSelectedOptionValue" />Beta</label>
+									<label><input type="radio" value="Gamma" data-bind="checked: radioSelectedOptionValue" />Gamma</label>
+								</td>
+							</tr>
+						</table>
+					</div><!--Panel-body-->
+				</div><!--Panel-->
+			</div><!--second col-md-6-->
+		</div><!--row-->
+	</div><!--second container close-->
+
+	
+	<div class="navbar navbar-inverse navbar-fixed-bottom">
+ 		<div class="container">
+  			<p class="navbar-text pull-left">Site Built By: Sergio Merida</p>
+  			<a href="https://github.com/SergioMerida" target="blank" class="navbar-btn btn-danger btn pull-right">Look my Github</a>
+ 		</div><!--container-->
+	</div><!--navbar-->
+	
+	<!--Javascript-->
+	<script src="js/controls.js"></script>
+	<!-- Bootstrap -->
+	<script src="bootstrap/js/bootstrap.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>

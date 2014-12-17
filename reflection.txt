@@ -1,0 +1,14 @@
+1. ¿What did you learn about KnockoutJS?
+	R// I learn that Knockout is a very useful tool that makes the job easier to the developer because it reduces the code and data are collected in real time it is a great tool, it make easier to create rich, responsive display and editor user interfaces with a clean underlying data model.
+
+2. ¿What is MVVM? Why is it usefull?
+	R// Model-View-View Model It's a design pattern for building user interfaces. Have three parts: 
+		1.Model: your application’s stored data.
+		2.View Model: a pure-code representation of the data and operations on a user interface.
+		3.View: a visible, interactive user interface representing the state of the view model.
+
+3. ¿What does the data-bind attribute do?
+	R// The data-bind attribute displays the data.
+
+4. ¿What does the following code do? ko.applyBindings(viewModel);
+	R// The ko.applyBindings it's useful because apply all the functions and data to the viewModel.

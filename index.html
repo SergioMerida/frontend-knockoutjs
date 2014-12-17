@@ -17,58 +17,22 @@
 <body>
 	<div class="container">
 		<div class="jumbotron">
-			
-		</div><!--jumbotron-->
-	</div><!--container-->
-
+			<h1>How to bind data from input fields</h1>
+		</div>
+	</div>
 	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<h2>People</h2>
-    			<ul class="list-group" data-bind="foreach: people">
-        			<li class="list-group-item">
-            			<div>
-                			<span data-bind="text: name"> </span> has <span data-bind='text: children().length'>&nbsp;</span> children:
-                			<a href='#' data-bind='click: addChild '>Add child</a>
-                			<span class='renderTime' data-bind='visible: $root.showRenderTimes'>
-                    		(person rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
-                			</span>
-            			</div>
-            			<ul class="list-group" data-bind="foreach: children">
-                			<li class="list-group-item">
-                    			<span data-bind="text: $data"> </span>
-                    			<span class='renderTime' data-bind='visible: $root.showRenderTimes'>
-                        		(child rendered at <span data-bind='text: new Date().getSeconds()' > </span>)
-                    			</span>              	
-  	        				</li><!--second li-->
-        				</ul><!--second ul-->
-					</li><!--first li-->
-				</ul><!--first ul-->
-				<label><input data-bind='checked: showRenderTimes' type='checkbox' /> Show render times</label> 
-			</div><!--col-md-6 first-->
-			<div class="col-md-6">
-				<div class="panel panel-inverse">
- 	 				<div class="panel-heading">Watch the video</div>
-  					<div class="panel-body"><!--Start the video-->
-						<form class="navbar-form" data-bind="submit:addItem">
-							<div class="form-group">
-        							Add item: <input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
-							<button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
-							</div>
-   						</form><!--form-->
-     	
-    						<select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"> </select>
-    						<div>
-        						<button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
-        						<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
-    						</div><!--buttons-->
-					</div><!--panel-body-->
-				</div><!--panel-->	
-			</div><!--col-md-6 second-->	
-		</div><!--Row close-->	
-	</div><!--second container close-->
-
-	
+		<div class="panel panel-default">
+			<div class="panel-heading">Type some artist and a song</div>
+  			<div class="panel-body">
+				<div class="data">
+				<p>Artist: <input data-bind="value: artist" /></p>
+				<p>Song: <input data-bind="value: song" /></p>
+				<p>Artist: <strong data-bind="text: artist"></strong> Song: <strong data-bind="text: song"></strong></p>
+				<p data-bind="text: together"></p>
+				</div>
+			</div><!--panel-body-->
+		</div><!--panel-->
+	</div><!--container-->
 
 	<div class="navbar navbar-inverse navbar-fixed-bottom">
  		<div class="container">

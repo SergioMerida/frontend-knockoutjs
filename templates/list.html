@@ -7,42 +7,50 @@
 
  	 <!-- Jquery -->
  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"> </script>
- <script type='text/javascript' src='frontend-knockoutjs/knockout/knockout-3.2.0.js'></script>
+ <script type='text/javascript' src='knockout/knockout-3.2.0.js'></script>
  <!-- Bootstrap core CSS -->
- <link href="frontend-knockoutjs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
- <link href="frontend-knockoutjs/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
- <link href="frontend-knockoutjs/css/styles.css" rel="stylesheet">
+ <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+ <link href="bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
+ <link href="css/list.css" rel="stylesheet">
 
 </head>
 <body>
 	<div class="container">
 		<div class="jumbotron">
-			
+			<div class="row">
+			<div class="col-md-2"></div>
+			<div class="col-md-8">
+			<h1>Using a grocery list</h1>
+			</div><!--col-md-8-->
+			</div><!--row-->
 		</div><!--jumbotron-->
 	</div><!--container-->
-
+	
 	<div class="container">
 		<div class="row">
-			</div><!--col-md-6 first-->
+			<div class="col-md-3"></div>
 			<div class="col-md-6">
-				<form data-bind="submit:addItem">
-        			Add item: <input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
-        			<button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
-   				</form><!--form-->
-     
-    			<p>Your values:</p>
-    			<select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"> </select>
-     
-    			<div>
-        			<button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
-        			<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
-    			</div>
-			</div><!--col-md-6 second-->	
-		</div><!--Row close-->	
+				<div class="panel panel-default">
+					<div class="panel-heading">You can add, remove and sort the list</div>
+  					<div class="panel-body"><!--Start the video-->
+						<form data-bind="submit:addItem">
+    						<p>Add item:</p><input type="text" data-bind='value:itemToAdd, valueUpdate: "afterkeydown"' />
+    						<button type="submit" data-bind="enable: itemToAdd().length > 0">Add</button>
+						</form><!--form-->
+ 
+						<p>Your values:</p>
+						<select multiple="multiple" height="5" data-bind="options:allItems, selectedOptions:selectedItems"> </select>
+						<div>
+    						<button data-bind="click: removeSelected, enable: selectedItems().length > 0">Remove</button>
+   							<button data-bind="click: sortItems, enable: allItems().length > 1">Sort</button>
+						</div><!--Buttons-->
+					</div><!--Panel-body-->
+				</div><!--Panel-->
+			</div><!-- first col-md-6-->
+		</div><!--row-->
 	</div><!--second container close-->
 
 	
-
 	<div class="navbar navbar-inverse navbar-fixed-bottom">
  		<div class="container">
   			<p class="navbar-text pull-left">Site Built By: Sergio Merida</p>
@@ -51,7 +59,7 @@
 	</div><!--navbar-->
 	
 	<!--Javascript-->
-	<script src="js/script.js"></script>
+	<script src="js/list.js"></script>
 	<!-- Bootstrap -->
 	<script src="bootstrap/js/bootstrap.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
