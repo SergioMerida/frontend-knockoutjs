@@ -47,6 +47,6 @@ As a user I must be able to add a child to any person in the people list.
 Answer the following questions in the [reflection.txt](README.md) file.
 
 1. What did you learn about KnockoutJS?
-2. What is MVVC? Why is it usefull?
+2. What is MVVM? Why is it usefull?
 3. What does the data-bind attribute do?
 4. What does the following code do? ```ko.applyBindings(viewModel);```
